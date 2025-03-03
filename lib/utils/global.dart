@@ -1,12 +1,19 @@
 import 'dart:io';
 
-Directory? currentDirectory;
-String serverIP = "192.0.0.1";
+class GlobalState {
+  static final GlobalState _instance = GlobalState._internal();
+  factory GlobalState() => _instance;
+  GlobalState._internal();
 
-Directory getDirectory(String containerName) {
-  return Directory('${Platform.environment['APPDATA']}\\wireguardserverui\\$containerName');
-}
+  Directory? currentDirectory;
+  String serverIP = "192.0.0.1";
+  String containerName = "test";
 
-String getServerIp(){
-  return serverIP;
+  Directory getDirectory(String containerName) {
+    return Directory('${Platform.environment['APPDATA']}\\wireguardserverui\\$containerName');
+  }
+
+  String getServerIp() {
+    return serverIP;
+  }
 }

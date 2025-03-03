@@ -31,12 +31,15 @@ class ServerAdd extends StatelessWidget {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () async {
-                final directory = getDirectory(containerNameController.text);
+                final directory = GlobalState().getDirectory(containerNameController.text);
 
                 // directory를 전역 변수에 저장
-                currentDirectory = directory;
+                GlobalState().currentDirectory = directory;
+                //컨테이너 이름
+                GlobalState().containerName = containerNameController.text;
+                print('테스트: ' + GlobalState().containerName);
                 // 서버 ip 저장
-                serverIP = ipController.text;
+                GlobalState().serverIP = ipController.text;
 
                 if (!await directory.exists()) {
                   await directory.create(recursive: true);
