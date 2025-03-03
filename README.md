@@ -4,6 +4,7 @@ WireGuard GUI for Server
 
 실행 후 + 버튼을 눌러 서버를 추가함
 ip 주소는 본인의 외부 ip 주소를 입력할 것
+
 ![image](https://github.com/user-attachments/assets/e7d02e9e-d8e1-4601-9a97-83e21116c798)
 ![image](https://github.com/user-attachments/assets/4476a340-1983-4049-a063-cdf477da3cff)
 
